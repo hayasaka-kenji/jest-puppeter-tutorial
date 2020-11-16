@@ -1,19 +1,9 @@
-// test.js
-const timeout = 5000;
+describe('Google', () => {
+  beforeAll(async () => {
+    await page.goto('https://google.com');
+  });
 
-describe(
-  '/ (Home Page)',
-  () => {
-    let page;
-    beforeAll(async () => {
-      page = await global.__BROWSER__.newPage();
-      await page.goto('https://www.amazon.co.jp/');
-    }, timeout);
-
-    it('should load without error', async () => {
-      const text = await page.evaluate(() => document.body.textContent);
-      expect(text).toContain('Amazon.co.jp');
-    });
-  },
-  timeout,
-);
+  it('should be titled "Google"', async () => {
+    await expect(page.title()).resolves.toMatch('Google');
+  });
+});

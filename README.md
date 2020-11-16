@@ -8,7 +8,5 @@
 https://jestjs.io/docs/ja/puppeteer
 
 ## 使い方
-```
-npm i
-npm test
-```
+- インストール `yarn i`
+- テストを回してみる `yarn test`
